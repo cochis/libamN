@@ -1,12 +1,46 @@
 .navbar {
-  background-color: var(--color-primary-green); // <-- Fondo verde principal
+  background-color: var(--color-primary-green); // Fondo verde principal
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar-brand img {
-  max-height: 45px; // Ajusta el tamaño de tu logo
+// --- INICIO DE MODIFICACIONES ---
+
+.navbar-brand {
+  // 1. Estilos del contenedor (el círculo)
+  background-color: #fff; // Fondo blanco
+  border: 3px solid var(--color-primary-red); // Borde rojo
+  border-radius: 50%; // Border radius circular
+  
+  // 2. Sizing
+  // Ajustamos el tamaño del círculo
+  width: 55px;
+  height: 55px;
+  
+  // 3. Centrado
+  // Usamos flexbox para centrar la imagen dentro del círculo
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // 4. Extras
+  padding: 0; // Quitamos padding por defecto si lo tuviera
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    // Un pequeño efecto al pasar el mouse
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
 }
+
+.navbar-brand img {
+  // Ajustamos la imagen para que quepa DENTRO del círculo de 55px
+  max-height: 35px;
+  width: auto; // Mantiene la proporción
+}
+
+// --- FIN DE MODIFICACIONES ---
 
 .nav-link {
   cursor: pointer;
