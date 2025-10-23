@@ -1,0 +1,85 @@
+<footer id="contact">
+    <div class="container">
+        <div class="row gy-4">
+
+            <div class="col-lg-4 col-md-6">
+                <h4 class="footer-title">Contacto</h4>
+                <p>
+                    Adolfo López Mateos 750<br>
+                    Colonia Las Flores Seccion Tamaulipas<br>
+                    Estado de México<br>
+                    C.P. 57310
+                </p>
+                <p>
+                    <strong>Teléfono:</strong> <a href="tel:555743444">555743444</a><br>
+                    <strong>Email:</strong> <a
+                        href="mailto:contacto&#64;colegiolibam.com">contacto&#64;colegiolibam.com</a>
+                </p>
+                <div class="social-links">
+                    <a href="httpsas://wa.me/555743444" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h4 class="footer-title">Enlaces Rápidos</h4>
+                <ul>
+                    <li><a (click)="onScrollTo('benefits')">Beneficios</a></li>
+                    <li><a (click)="onScrollTo('costs')">Costos</a></li>
+                    <li><a (click)="onScrollTo('teachers')">Maestros</a></li>
+                    <li><a (click)="onScrollTo('events')">Eventos</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-5 col-md-12">
+                <h4 class="footer-title">Contacto y Registro</h4>
+                <p>Envíanos tus datos y te contactaremos a la brevedad.</p>
+
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+                    <div *ngIf="isSubmitted" class="alert alert-success">
+                        ¡Gracias! Hemos recibido tus datos.
+                    </div>
+                    <div *ngIf="submitError" class="alert alert-danger">
+                        Hubo un error al enviar. Intenta más tarde.
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" formControlName="nombre" class="form-control"
+                            placeholder="Nombre del padre/madre"
+                            [ngClass]="{ 'is-invalid': f['nombre'].touched && f['nombre'].errors }">
+                        <div *ngIf="f['nombre'].touched && f['nombre'].errors" class="invalid-feedback">
+                            El nombre es requerido.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="tel" formControlName="telefono" class="form-control"
+                            placeholder="Teléfono (10 dígitos)"
+                            [ngClass]="{ 'is-invalid': f['telefono'].touched && f['telefono'].errors }">
+                        <div *ngIf="f['telefono'].touched && f['telefono'].errors" class="invalid-feedback">
+                            <span *ngIf="f['telefono'].errors?.['required']">El teléfono es requerido.</span>
+                            <span *ngIf="f['telefono'].errors?.['pattern']">Debe ser un teléfono de 10 dígitos.</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="email" formControlName="correo" class="form-control"
+                            placeholder="Correo electrónico"
+                            [ngClass]="{ 'is-invalid': f['correo'].touched && f['correo'].errors }">
+                        <div *ngIf="f['correo'].touched && f['correo'].errors" class="invalid-feedback">
+                            <span *ngIf="f['correo'].errors?.['required']">El correo es requerido.</span>
+                            <span *ngIf="f['correo'].errors?.['email']">El formato del correo no es válido.</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Solicitar
+                            Información</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</footer>

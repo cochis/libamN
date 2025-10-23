@@ -1,0 +1,30 @@
+.navbar {
+  background-color: var(--color-primary-green); // <-- Fondo verde principal
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand img {
+  max-height: 45px; // Ajusta el tamaño de tu logo
+  cursor: pointer;
+}
+
+.nav-link {
+  cursor: pointer;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0.5rem;
+  
+  &:hover {
+    color: var(--color-primary-gold);
+  }
+}
+
+.nav-link.btn-primary {
+  color: var(--color-primary-black); // Asegura el color del texto en el botón
+  padding: 0.5rem 1rem;
+  
+  &:hover {
+    color: var(--color-primary-black);
+  }
+}

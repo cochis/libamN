@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Importar Bootstrap y Fuentes */
+@import "bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+/* * PRIMERO: Definimos las variables de SASS (con $) 
+ * Estas son las que usará la función darken()
+ */
+$color-primary-gold: #D4AF37;
+$color-primary-black: #1A1A1A;
+$color-primary-red: #B22222;
+$color-primary-green: #004d41; // <-- TU COLOR PRINCIPAL
+$color-accent-yellow: #f8eecd;
+$color-accent-orange: #E67E22;
+$color-accent-blue: #2980B9;
+
+/* * SEGUNDO: Usamos las variables SASS para crear 
+ * las variables CSS (con --) que usará el navegador.
+ */
+:root {
+  // Paleta Principal (Logo)
+  --color-primary-gold: #{$color-primary-gold};
+  --color-primary-black: #{$color-primary-black};
+  --color-primary-red: #{$color-primary-red};
+  --color-primary-green: #{$color-primary-green};
+
+  // Paleta de Acento (Template, armonizada)
+  --color-accent-yellow: #{$color-accent-yellow};
+  --color-accent-orange: #{$color-accent-orange};
+  --color-accent-blue: #{$color-accent-blue};
+
+  // Fuentes
+  --font-headings: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* 3. Estilos Globales */
+body {
+  font-family: var(--font-body);
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  color: var(--color-primary-black);
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+/* 4. Sobrescritura de Bootstrap */
+.btn-primary {
+  background-color: var(--color-primary-gold); // Se usa la variable CSS
+  border-color: var(--color-primary-gold);   // Se usa la variable CSS
+  color: var(--color-primary-black);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-headings);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    /* Usamos la variable SASS ($) para la función darken() */
+    background-color: darken($color-primary-gold, 10%);
+    border-color: darken($color-primary-gold, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-secondary {
+  background-color: var(--color-primary-red); // Se usa la variable CSS
+  border-color: var(--color-primary-red);   // Se usa la variable CSS
+  color: white;
+
+  &:hover {
+    /* Usamos la variable SASS ($) para la función darken() */
+    background-color: darken($color-primary-red, 10%);
+    border-color: darken($color-primary-red, 10%);
+  }
+}

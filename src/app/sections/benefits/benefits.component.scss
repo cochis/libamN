@@ -1,0 +1,37 @@
+.benefit-box {
+  padding: 3rem 2rem;
+  height: 100%;
+  
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  p, ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
+
+.bg-yellow {
+  background-color: var(--color-accent-yellow);
+  h3 { color: var(--color-primary-black); }
+}
+
+.bg-orange {
+  background-color: var(--color-accent-orange);
+  h3, p, li { color: white; }
+}
+
+.bg-blue {
+  background-color: var(--color-accent-blue);
+  h3, p, li { color: white; }
+}

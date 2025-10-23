@@ -1,0 +1,24 @@
+.teacher-card {
+  img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid var(--color-accent-yellow);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-primary-black);
+  }
+
+  p {
+    color: var(--color-primary-red);
+    font-weight: 600;
+  }
+}

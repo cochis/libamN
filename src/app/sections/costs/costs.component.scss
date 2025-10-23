@@ -1,0 +1,36 @@
+.cost-card {
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .card-header {
+    background-color: var(--color-primary-green);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+
+    h4 {
+      color: white;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    span {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+  }
+  
+  .card-header.highlight-header {
+    background-color: var(--color-primary-red);
+  }
+
+  .list-group-item {
+    padding: 1rem;
+    font-size: 1rem;
+    
+    strong {
+      color: var(--color-primary-black);
+      font-size: 1.1rem;
+    }
+  }
+}

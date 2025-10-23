@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" (click)="onScrollTo('hero')">
+            <img src="assets/images/image_eec559.png" alt="Logo Colegio">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="onScrollTo('hero')">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="onScrollTo('benefits')">Beneficios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="onScrollTo('costs')">Costos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary ms-lg-3" (click)="onScrollTo('contact')">¡Inscríbete!</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
